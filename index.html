@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #f8f4f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .project {
+        width: 140px;
+        height: 500px;
+        margin-top: 20px;
+      }
+      .top {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .studymore {
+        background-color: yellow;
+        border-radius: 50px;
+        padding: 10px;
+        width: 110px;
+        height: 40px;
+        margin-left: 3px;
+      }
+      .topright {
+        background-color: white;
+        width: 200px;
+        height: 40px;
+        border-radius: 50px;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 20px;
+      }
+      .container {
+        width: 1420px;
+        height: 720px;
+        background-color: #f8f4f0;
+        border-radius: 30px;
+        display: flex;
+      }
+      .box1 {
+        width: 900px;
+        height: 720px;
+        background-color: white;
+        border-radius: 20px;
+        border: 2px solid black;
+      }
+      .box2 {
+        width: 500px;
+        height: 720px;
+        background-color: white;
+        border-radius: 20px;
+        margin-left: 20px;
+        border: 1px solid black;
+      }
+      .box1top {
+        display: flex;
+        align-items: center;
+        width: 900px;
+        height: 70px;
+        background-color: #fff;
+        border-radius: 30px 30px 0 0;
+        border-bottom: 1px solid black;
+      }
+      .rectg {
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        border: 1px solid black;
+      }
+      .hidemastered {
+        display: flex;
+        align-items: center;
+        margin-left: 15px;
+        margin-top: -10px;
+      }
+      .box1main {
+        display: flex;
+        flex-direction: column;
+        width: 880px;
+        height: 410px;
+        background-color: #fb8de5;
+        border-radius: 20px;
+        margin-left: 10px;
+        border-radius: 30px;
+        border: 2px solid black;
+        margin-top: 10px;
+      }
+      .zerofive {
+        display: flex;
+        align-items: center;
+        margin-left: 370px;
+        margin-top: 100px;
+      }
+      .buttons {
+        margin-left: 290px;
+        margin-top: 10px;
+      }
+      .box1bottom {
+        display: flex;
+        align-items: center;
+        margin-top: 50px;
+        /* margin-left: 10px; */
+        width: 900px;
+        background-color: #fff;
+        height: 120px;
+        border-radius: 0 0 30px 30px;
+        border-top: 1px solid black;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        gap: 30px;
+        margin-top: 30px;
+        margin-left: 20px;
+      }
+      .box21 {
+        grid-column: 1/3;
+        grid-row: 1/3;
+        width: 450px;
+        height: 130px;
+        background-color: white;
+        border-radius: 10px;
+        border: 1px solid black;
+        display: flex;
+      }
+      .box22 {
+        grid-column: 1/3;
+        grid-row: 2/3;
+        width: 450px;
+        height: 130px;
+        background-color: white;
+        border-radius: 10px;
+        border: 1px solid black;
+      }
+      .box23 {
+        grid-column: 1/3;
+        grid-row: 3/3;
+        width: 450px;
+        height: 130px;
+        background-color: white;
+        border-radius: 10px;
+        border: 1px solid black;
+      }
+      .box24 {
+        grid-column: 1/3;
+        grid-row: 4/4;
+        width: 450px;
+        height: 130px;
+        background-color: white;
+        border-radius: 10px;
+        border: 1px solid black;
+      }
+      .photo {
+        background-color: #94adea;
+        width: 140px;
+        height: 130px;
+        margin-left: 0px;
+        border-radius: 0 10px 10px 0;
+      }
+      .word {
+        margin-left: 30px;
+        margin-top: 10px;
+        width: 300px;
+        /* background-color: cyan; */
+      }
+      .photo2 {
+        background-color: #96e7dd;
+        width: 140px;
+        height: 130px;
+        margin-left: 310px;
+        margin-top: -132px;
+        border-radius: 0 10px 10px 0;
+      }
+      .photo3 {
+        background-color: #eb79a3;
+        width: 140px;
+        height: 130px;
+        margin-left: 310px;
+        margin-top: -132px;
+        border-radius: 0 10px 10px 0;
+      }
+      .photo4 {
+        background-color: #fc92e6;
+        width: 140px;
+        height: 130px;
+        margin-left: 310px;
+        margin-top: -132px;
+        border-radius: 0 10px 10px 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      @media screen and (max-width: 1024px) {
+        .project {
+          width: auto;
+          height: auto;
+          margin: 16px;
+        }
+
+        .top {
+          padding: 8px 12px;
+        }
+
+        .topright {
+          position: static;
+          right: auto;
+          margin-left: auto;
+          padding: 0 10px;
+          width: auto;
+          height: 40px;
+          gap: 10px;
+        }
+
+        .studymore {
+          width: auto;
+          height: 36px;
+          padding: 8px 14px;
+          margin-left: 0;
+        }
+
+        .container {
+          width: 100%;
+          height: auto;
+          flex-direction: column;
+          border-radius: 20px;
+          padding: 12px;
+          gap: 16px;
+        }
+
+        .box1,
+        .box2 {
+          width: 100%;
+          height: auto;
+          border-radius: 16px;
+        }
+
+        .box1top {
+          width: 100%;
+          height: auto;
+          padding: 10px;
+          gap: 10px;
+          flex-wrap: wrap;
+          border-radius: 16px 16px 0 0;
+        }
+
+        .hidemastered {
+          margin-left: 0;
+          margin-top: 0;
+        }
+
+        .box1top button {
+          height: 32px;
+        }
+
+        .box1main {
+          width: 100%;
+          height: auto;
+          margin-left: 0;
+          margin-top: 12px;
+          padding: 16px;
+        }
+
+        .box1main > button {
+          margin-left: 0;
+          margin-top: 0;
+          align-self: center;
+        }
+
+        .box1main h1 {
+          font-size: 32px;
+          line-height: 1.25;
+          margin: 24px 16px;
+          text-align: center;
+        }
+
+        .box1main p {
+          margin: 0 auto;
+          text-align: center;
+        }
+
+        .zerofive {
+          justify-content: center;
+          margin: 18px 0 0 0;
+        }
+
+        .buttons {
+          margin: 16px auto 0 auto;
+          display: flex;
+          justify-content: center;
+          gap: 12px;
+        }
+
+        .box1bottom {
+          width: 100%;
+          height: auto;
+          padding: 12px;
+          margin-top: 24px;
+          gap: 12px;
+          justify-content: space-between;
+        }
+
+        .box1bottom p {
+          margin: 0;
+          text-align: center;
+          flex: 1;
+          color: gray;
+        }
+
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+          margin: 20px;
+        }
+
+        .box21,
+        .box22,
+        .box23,
+        .box24 {
+          width: 100%;
+          height: auto;
+          min-height: 120px;
+          display: flex;
+          align-items: stretch;
+          border-radius: 12px;
+          padding: 12px;
+          position: relative;
+        }
+
+        .word {
+          margin: 0;
+          width: auto;
+          flex: 1;
+        }
+
+        .photo,
+        .photo2,
+        .photo3,
+        .photo4 {
+          width: 120px;
+          height: auto;
+          min-height: 100px;
+          margin: 0;
+          border-radius: 8px;
+        }
+
+        .photo img,
+        .photo2 img,
+        .photo3 img,
+        .photo4 img {
+          display: block;
+          margin: 28px auto;
+        }
+
+        .photo2,
+        .photo3,
+        .photo4 {
+          margin-left: 0;
+          margin-top: 0;
+        }
+
+        .box2 h2 {
+          margin-left: 20px;
+          margin-top: 16px;
+          font-size: 22px;
+        }
+
+        .word p {
+          font-size: 18px;
+        }
+
+        .word h2 {
+          font-size: 32px;
+          margin-top: 4px;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .container {
+          padding: 10px;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .project {
+          width: 100%;
+          height: auto;
+          margin: 8px;
+        }
+
+        .top {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 6px;
+        }
+
+        .topright {
+          position: static;
+          width: 100%;
+          justify-content: space-between;
+          margin-top: 8px;
+          padding: 6px 10px;
+        }
+
+        .studymore {
+          width: auto;
+          height: 32px;
+          padding: 6px 12px;
+        }
+
+        .container {
+          flex-direction: column;
+          width: 100%;
+          height: auto;
+          padding: 8px;
+          gap: 12px;
+        }
+
+        .box1,
+        .box2 {
+          width: 100%;
+          height: auto;
+          border-radius: 12px;
+        }
+
+        .box1top {
+          flex-wrap: wrap;
+          width: 100%;
+          height: auto;
+          padding: 8px;
+          gap: 8px;
+        }
+
+        .box1main {
+          width: 100%;
+          height: auto;
+          margin: 10px 0;
+          padding: 12px;
+        }
+
+        .box1main h1 {
+          font-size: 24px;
+          text-align: center;
+          margin: 20px 0;
+        }
+
+        .box1main p {
+          text-align: center;
+          margin: 0;
+        }
+
+        .zerofive {
+          justify-content: center;
+          margin: 12px 0;
+        }
+
+        .buttons {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin: 12px auto;
+          width: 80%;
+        }
+
+        .box1bottom {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          padding: 10px;
+          height: auto;
+        }
+
+        .box1bottom p {
+          margin: 0;
+          text-align: center;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+          margin: 16px;
+        }
+
+        .box21,
+        .box22,
+        .box23,
+        .box24 {
+          width: 100%;
+          height: auto;
+          min-height: 100px;
+          flex-direction: row;
+          align-items: center;
+          padding: 10px;
+        }
+
+        .word {
+          margin: 0;
+          flex: 1;
+        }
+
+        .photo,
+        .photo2,
+        .photo3,
+        .photo4 {
+          width: 80px;
+          height: 80px;
+          margin: 0;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .photo img,
+        .photo2 img,
+        .photo3 img,
+        .photo4 img {
+          margin: 0;
+          width: 40px;
+          height: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="project">
+      <div class="top">
+        <img src="flash-card.png" alt="" style="width: 40px; height: 40px" />
+        <p style="font-family: sans-serif; font-size: 20px">Flashcard</p>
+        <div class="topright">
+          <button class="studymore">Study Mode</button>
+          <p
+            style="font-family: sans-serif; font-size: 15px; margin-left: 10px"
+          >
+            All Cards
+          </p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="box1">
+          <div class="box1top">
+            <button
+              style="
+                background-color: #fff;
+                border-radius: 30px;
+                border: 1px solid black;
+                padding: 5px;
+                width: 130px;
+                height: 30px;
+                margin-top: -10px;
+                margin-left: 10px;
+              "
+            >
+              All Categories
+            </button>
+            <div class="hidemastered">
+              <div class="rectg"></div>
+              <p
+                style="
+                  font-family: sans-serif;
+                  font-size: 15px;
+                  margin-left: 5px;
+                "
+              >
+                Hide Mastered
+              </p>
+            </div>
+
+            <button
+              style="
+                background-color: #fff;
+                border-radius: 30px;
+                border: 1px solid black;
+                padding: 5px;
+                width: 100px;
+                height: 30px;
+                margin-left: 500px;
+                margin-top: -10px;
+              "
+            >
+              Shuffle
+            </button>
+          </div>
+          <div class="box1main">
+            <button
+              style="
+                width: 150px;
+                height: 30px;
+                background-color: #fff;
+                border-radius: 30px;
+                margin-left: 360px;
+                margin-top: 20px;
+              "
+            >
+              Web Development
+            </button>
+            <h1
+              style="
+                font-family: sans-serif;
+                margin-left: 130px;
+                font-size: 45px;
+                margin-top: 120px;
+              "
+            >
+              What does HTML stand for?
+            </h1>
+            <p
+              style="
+                font-family: sans-serif;
+                margin-left: 340px;
+                margin-top: -10px;
+              "
+            >
+              Click to reveal answer
+            </p>
+            <div class="zerofive">
+              <button style="width: 80px; height: 8px"></button>
+              <span style="font-family: sans-serif; margin-left: 3px">0/5</span>
+            </div>
+          </div>
+          <div class="buttons">
+            <button
+              style="
+                width: 130px;
+                height: 40px;
+                background-color: rgb(255, 230, 0);
+                border-radius: 30px;
+                padding: 5px;
+              "
+            >
+              I know this
+            </button>
+            <button
+              style="
+                width: 150px;
+                height: 40px;
+                background-color: white;
+                border-radius: 30px;
+                padding: 5px;
+              "
+            >
+              Reset progress
+            </button>
+          </div>
+          <div class="box1bottom">
+            <button
+              style="
+                width: 100px;
+                height: 40px;
+                border-radius: 30px;
+                padding: 5px;
+                margin-left: 10px;
+                background-color: #fff;
+              "
+            >
+              Previous
+            </button>
+            <p style="color: gray; margin-left: 280px">Card 1 of 40</p>
+            <button
+              style="
+                width: 80px;
+                height: 40px;
+                border-radius: 30px;
+                padding: 5px;
+                margin-left: 320px;
+                background-color: #fff;
+              "
+            >
+              Next
+            </button>
+          </div>
+        </div>
+        <div class="box2">
+          <h2
+            style="font-family: sans-serif; margin-left: 20px; margin-top: 30px"
+          >
+            Study Statistics
+          </h2>
+          <div class="grid">
+            <div class="box21">
+              <div class="word">
+                <p style="font-family: sans-serif; font-size: 20px">
+                  Total Cards
+                </p>
+                <h2
+                  style="
+                    font-family: sans-serif;
+                    font-size: 40px;
+                    margin-top: -10px;
+                  "
+                >
+                  40
+                </h2>
+              </div>
+              <div class="photo">
+                <img
+                  src="copy-layer.png"
+                  alt=""
+                  style="
+                    width: 50px;
+                    height: 50px;
+                    margin-left: 35px;
+                    margin-top: 40px;
+                  "
+                />
+              </div>
+            </div>
+            <div class="box22">
+              <div class="word">
+                <p style="font-family: sans-serif; font-size: 20px">Mastered</p>
+                <h2
+                  style="
+                    font-family: sans-serif;
+                    font-size: 40px;
+                    margin-top: -10px;
+                  "
+                >
+                  11
+                </h2>
+              </div>
+              <div class="photo2">
+                <img
+                  src="brain.png"
+                  alt=""
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    margin-left: 45px;
+                    margin-top: 40px;
+                  "
+                />
+              </div>
+            </div>
+            <div class="box23">
+              <div class="word">
+                <p style="font-family: sans-serif; font-size: 20px">
+                  In Progress
+                </p>
+                <h2
+                  style="
+                    font-family: sans-serif;
+                    font-size: 40px;
+                    margin-top: -10px;
+                  "
+                >
+                  21
+                </h2>
+              </div>
+              <div class="photo3">
+                <img
+                  src="open-book.png"
+                  alt=""
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    margin-left: 45px;
+                    margin-top: 45px;
+                  "
+                />
+              </div>
+            </div>
+            <div class="box24">
+              <div class="word">
+                <p style="font-family: sans-serif; font-size: 20px">
+                  Not Started
+                </p>
+                <h2
+                  style="
+                    font-family: sans-serif;
+                    font-size: 40px;
+                    margin-top: -10px;
+                  "
+                >
+                  8
+                </h2>
+              </div>
+              <div class="photo4">
+                <img
+                  src="archive.png"
+                  alt=""
+                  style="
+                    width: 50px;
+                    height: 50px;
+                    margin-left: 40px;
+                    margin-top: 40px;
+                  "
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
